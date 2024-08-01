@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Afil Adjusters & Investigators</title>
+    <link rel="stylesheet" href="adminStyle.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/afil.png" alt="Afil Adjusters & Investigators">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Admin Panel</h1>
+
+        <h2>Edit Home Section</h2>
+        <form id="edit-home-form">
+            <div class="form-group">
+                <label for="home-title">Title</label>
+                <input type="text" id="home-title" name="home-title" value="Welcome to Afil Adjusters & Investigators">
+            </div>
+            <div class="form-group">
+                <label for="home-overview">Overview</label>
+                <textarea id="home-overview" name="home-overview">Overview of services and what we offer to our clients.</textarea>
+            </div>
+            <button type="submit">Save</button>
+        </form>
+
+        <h2>Edit About Us Section</h2>
+        <form id="edit-about-form">
+            <div class="form-group">
+                <label for="about-company-history">Company History</label>
+                <textarea id="about-company-history" name="about-company-history">Founded in 1985, with office humbly started at Jalan Ipoh, we have settled in Wangsa Maju, Kuala Lumpur since 1996. We believed a strategic and permanent location is important to build a strong business network in providing immediate attendance for the adjusting work.</textarea>
+            </div>
+            <div class="form-group">
+                <label for="about-vision">Vision</label>
+                <textarea id="about-vision" name="about-vision">Afil shall sustain among the loss adjuster firms in Malaysia while keeping the environment safe to all our stakeholders and minimize the wastage in any form while carrying our duty.</textarea>
+            </div>
+            <div class="form-group">
+                <label for="about-mission">Mission</label>
+                <textarea id="about-mission" name="about-mission">We obliged to serve promptly, equitably, efficiently and always with integrity and honesty</textarea>
+            </div>
+            <button type="submit">Save</button>
+        </form>
+
+        <h2>Edit Services Section</h2>
+        <form id="edit-services-form">
+            <div class="form-group">
+                <label for="service-description">Service Description</label>
+                <textarea id="service-description" name="service-description">Comprehensive Insurance Solutions and Risk Management Services...</textarea>
+            </div>
+            <button type="submit">Save</button>
+        </form>
+
+        <h2>Edit Newsletters</h2>
+        <form id="edit-newsletter-form">
+            <div class="form-group">
+                <label for="newsletter-title">Newsletter Title</label>
+                <input type="text" id="newsletter-title" name="newsletter-title" value="July 2024 Newsletter">
+            </div>
+            <div class="form-group">
+                <label for="newsletter-link">Newsletter Link</label>
+                <input type="text" id="newsletter-link" name="newsletter-link" value="newsletter-july-2024.html">
+            </div>
+            <button type="submit">Add/Update</button>
+        </form>
+
+        <h2>Contact Information</h2>
+        <form id="edit-contact-form">
+            <div class="form-group">
+                <label for="contact-address">Address</label>
+                <textarea id="contact-address" name="contact-address">Afil Adjusters & Investigators Sdn. Bhd., 34-1, Jalan 2a/27a, Seksyen 1 Wangsa Maju, 53300 Kuala Lumpur, Malaysia</textarea>
+            </div>
+            <div class="form-group">
+                <label for="contact-phone">Phone</label>
+                <input type="text" id="contact-phone" name="contact-phone" value="+60341439140">
+            </div>
+            <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="text" id="contact-email" name="contact-email" value="contact@afiladjusters.com">
+            </div>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>
