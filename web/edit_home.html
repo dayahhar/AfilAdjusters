@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Home Section - Admin Panel</title>
+    <link rel="stylesheet" href="adminStyle.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/afil.png" alt="Afil Adjusters & Investigators">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="admin.html">Home</a></li>
+                <li><a href="logout.html">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="edit-section">
+            <h2>Edit Home Section</h2>
+            <form id="edit-home-form">
+                <label for="home-title">Headline:</label>
+                <input type="text" id="home-title" name="home-title" value="Welcome to Afil Adjusters & Investigators">
+
+                <label for="home-paragraph">Overview:</label>
+                <textarea id="home-paragraph" name="home-paragraph">Overview of services and what we offer to our clients.</textarea>
+
+                <label for="cta-button-text">Button Text:</label>
+                <input type="text" id="cta-button-text" name="cta-button-text" value="Our Services">
+
+                <button type="submit">Save Changes</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Afil Adjusters & Investigators Sdn. Bhd.</div>
+            <div class="quick-links">
+                <a href="https://www.facebook.com/afiladjuster/">Facebook</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('edit-home-form');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Collect form data
+                const title = document.getElementById('home-title').value;
+                const paragraph = document.getElementById('home-paragraph').value;
+                const buttonText = document.getElementById('cta-button-text').value;
+
+                // Log data (replace this with actual save logic)
+                console.log('Headline:', title);
+                console.log('Overview:', paragraph);
+                console.log('Button Text:', buttonText);
+
+                // Here you would typically send the data to your server
+                // For example: fetch('/save-home-section', { method: 'POST', body: JSON.stringify({ title, paragraph, buttonText }), headers: { 'Content-Type': 'application/json' } });
+
+                alert('Changes saved successfully!');
+            });
+        });
+    </script>
+</body>
+</html>

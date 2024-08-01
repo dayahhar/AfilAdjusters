@@ -1,9 +1,11 @@
+/* General Styles */
 body {
     font-family: "Helvetica", sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     background-color: #fff;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -14,13 +16,13 @@ header {
     color: #936B0E; /* Gold */
     padding: 10px 20px;
     border-bottom: 2px solid #FFD700; /* Gold */
-    height: 80px; /* Set a fixed height for the header */
+    height: 80px;
 }
 
 header .logo img {
-    max-width: 100%; /* Ensure the image scales down if too large */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 60px; /* Adjust max height as needed */
+    max-width: 100%;
+    height: auto;
+    max-height: 60px;
 }
 
 nav ul {
@@ -37,8 +39,14 @@ nav ul li {
 nav ul li a {
     color: #936B0E; /* Gold */
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: #b27723; /* Gold */
+}
+
+/* Hero Section */
 .hero-section {
     background-color: #000;
     color: #936B0E; /* Gold */
@@ -61,14 +69,18 @@ nav ul li a {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #FFC700; /* Slightly different gold */
+    background-color: #b27723; /* Slightly different gold */
 }
 
+/* Sections */
 section {
     padding: 50px 20px;
+    opacity: 0; /* Initially hidden for fade-in effect */
+    animation: fadeIn 1s ease-out forwards;
 }
 
 section h2 {
@@ -78,11 +90,7 @@ section h2 {
     color: #000;
 }
 
-section .team, section .certifications, section .faq, section .service {
-    margin-top: 20px;
-    color: #333;
-}
-
+/* Team Members */
 .team-member {
     display: inline-block;
     margin-right: 20px;
@@ -102,27 +110,21 @@ section .team, section .certifications, section .faq, section .service {
 
 .team-member img {
     border-radius: 50%;
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
+    width: 100px;
+    height: 100px;
     border: 3px solid #936B0E; /* Gold */
 }
 
-.team-member h3 {
-    margin-top: 10px;
+.team-member h3, .team-member .title, .team-member p {
+    margin: 5px 0;
     color: #000;
-    font-size: 1.2em; /* Adjust the size for the name */
 }
 
 .team-member .title {
-    font-weight: bold; /* Make the title bold */
-    margin: 5px 0;
-    color: #000; /* Adjust color if needed */
+    font-weight: bold;
 }
 
-.team-member p {
-    margin: 5px 0;
-}
-
+/* Contact Information */
 .contact-info {
     margin-top: 20px;
 }
@@ -135,18 +137,15 @@ section .team, section .certifications, section .faq, section .service {
 .office-info {
     display: flex;
     align-items: center;
-    gap: 20px; /* Add some space between the map and text */
+    gap: 20px;
 }
 
-office-map {
+.office-map {
     max-width: 50%;
     border-radius: 5px;
 }
 
-.address-info p {
-    margin: 5px 0;
-}
-
+/* Form Styles */
 form {
     display: flex;
     flex-direction: column;
@@ -159,11 +158,11 @@ form label {
 form input, form textarea, form button {
     margin-top: 5px;
     padding: 10px;
-    border: 1px solid #333;
     border-radius: 5px;
 }
 
 form input, form textarea {
+    border: 1px solid #333;
     background-color: #fff;
     color: #333;
 }
@@ -173,12 +172,15 @@ form button {
     color: #000;
     border: none;
     font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #FFC700; /* Slightly different gold */
+    background-color: #b27723; /* Slightly different gold */
 }
 
+/* Footer */
 footer {
     background-color: #000;
     color: #936B0E; /* Gold */
@@ -197,25 +199,16 @@ footer .social-media a, footer .quick-links a {
     color: #936B0E; /* Gold */
     text-decoration: none;
     margin-right: 10px;
+    transition: color 0.3s ease;
 }
 
 footer .social-media a:hover, footer .quick-links a:hover {
     text-decoration: underline;
 }
 
+/* Industries */
 #industries {
     padding: 50px 20px;
-}
-
-#industries h2 {
-    font-size: 2em;
-    border-bottom: 2px solid #FFD700; /* Gold */
-    padding-bottom: 10px;
-    color: #000;
-}
-
-.industry {
-    margin-top: 20px;
 }
 
 .industry-frame {
@@ -226,9 +219,7 @@ footer .social-media a:hover, footer .quick-links a:hover {
     color: #333;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    text-align: center; /* Center the text and logo */
+    text-align: center;
 }
 
 .industry-frame:hover {
@@ -236,10 +227,9 @@ footer .social-media a:hover, footer .quick-links a:hover {
 }
 
 .industry-logo {
-    max-width: 100px; /* Adjust the size of the logo */
+    max-width: 100px;
     height: auto;
-    display: block;
-    margin: 0 auto 15px auto; /* Center the logo and add space below */
+    margin: 0 auto 15px;
 }
 
 .industry h3 {
@@ -251,15 +241,9 @@ footer .social-media a:hover, footer .quick-links a:hover {
     margin: 10px 0;
 }
 
+/* Newsletter */
 #newsletter {
     padding: 50px 20px;
-}
-
-#newsletter h2 {
-    font-size: 2em;
-    border-bottom: 2px solid #FFD700; /* Gold */
-    padding-bottom: 10px;
-    color: #000;
 }
 
 .newsletter-container {
@@ -273,18 +257,17 @@ footer .social-media a:hover, footer .quick-links a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 2px solid #936B0E; /* Gold */
     padding: 20px;
-    box-sizing: border-box;
     background-color: #fff;
-    border-radius: 10px; /* Smooth corners */
+    border-radius: 10px;
 }
 
 .newsletter-card h3 {
-    margin: 0;
-    color: #000; /* Black color for titles */
+    margin: 0 0 10px;
+    color: #000;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
+/* Read More Button */
 .read-more {
     display: inline-block;
     background-color: transparent;
@@ -294,10 +277,105 @@ footer .social-media a:hover, footer .quick-links a:hover {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .read-more:hover {
-    background-color: #FFD700; /* Gold */
+    background-color: #b27723; /* Gold */
     color: #000;
 }
+
+/* Login and Register Containers */
+.login-container, .register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container {
+    border: 2px solid #936B0E; /* Gold */
+    border-radius: 10px;
+}
+
+.login-container h2 {
+    margin-top: 0;
+    color: #000;
+}
+
+.register-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-container .form-group {
+    margin-bottom: 15px;
+}
+
+.register-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.register-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #936B0E; /* Gold */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+    background-color: #b27723;
+}
+
+.register-container p {
+    text-align: center;
+}
+
+.register-container a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.register-container a:hover {
+    text-decoration: underline;
+}
+
+/* Define the keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the fade-in effect to elements */
+.fade-in {
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.fade-in-visible {
+    opacity: 1; /* Visible state */
+}
+
