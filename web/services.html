@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/afil.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="industries.html">Industries Served</a></li>
+                <li><a href="newsletter.html">Newsletters</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Our Services</h1>
+            <p>Discover the wide range of services we offer to help you succeed.</p>
+        </div>
+    </section>
+
+    <section id="services" class="fade-in slide-in">
+        <h2>What We Offer</h2>
+        <ul>
+            <li><strong>Service 1:</strong> All class of insurance and takaful claims adjusting.</li>
+            <li><strong>Service 2:</strong> All type of investigations and inspections task.</li>
+            <li><strong>Service 3:</strong> Surveillance and protection for the safety of life, business or  goods.</li>
+            <li><strong>Service 4:</strong> Risk consultation and management services.</li>
+            <li><strong>Service 5:</strong> Providing trainings and workshops for our clients within our expertise.</li>
+            <li><strong>Service 6:</strong> Expecting to launch NDTS (In-House) Training Centre for NOSS Code G452-009-3:2022 (Vehicle Damage Assesment and Repair) in Q3 2024, to become Malaysian first adjuster firm to conduct such program.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Afil Adjusters & Investigators</div>
+            <div class="quick-links">
+                <a href="https://www.facebook.com/afiladjuster/" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.slide-in');
+
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    sections.forEach(section => {
+                        section.classList.remove('slide-in-visible');
+                    });
+
+                    setTimeout(() => {
+                        targetSection.classList.add('slide-in-visible');
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 10);
+                });
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

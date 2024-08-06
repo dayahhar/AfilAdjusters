@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Afil Adjusters & Investigators</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/afil.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="industries.html">Industries Served</a></li>
+                <li><a href="newsletter.html">Newsletters</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>About Us</h1>
+            <p>Learn more about our history, vision, mission, and team.</p>
+        </div>
+    </section>
+
+    <section id="history" class="fade-in slide-in">
+        <h2>Our History</h2>
+        <p>AFIL ADJUSTERS & INVESTIGATORS SDN BHD (AFIL) is a one of the registered and licenced Insurance and Takaful Loss Adjusters in Malaysia. Currently, the directors are actively involved with its daily operation.</p>
+        <p>Founded in 1985, with office humbly started at Jalan Ipoh, we have settled in Wangsa Maju, Kuala Lumpur since 1996. We believed a strategic and permanent location is important to build a strong business network in providing immediate attendance for the adjusting work.</p>
+        <p>Over the years, we expanded our network throughout Malaysia in major cities such as Penang, Kuantan, Kota Bharu, Melaka, Johor Bahru, Kuching and Kota Kinabalu.</p> </br>
+        <p>We earned our reputation through the integrity, diligence, equitable and fair assessment of claims and most of all the honesty of recruited staffs</p>
+        <p>We believed the highly trained and dedicated staffs will be our human capital that sustained our company in the competitive industry. The dedicated team has experience and skill in dealing with various types of insurance claims from inception to the final settlement through their abilities to communicate and negotiate with various parties in their own technical language.</p>
+        <p>In 2023, we managed to save insurer and takaful operators, 36 percent of own-damage claims cost from the repair estimate and had a TAT of 3.1 days (Improvement of 1% and 0.3 day compare to previous year)</p>
+    </section>
+
+    <section id="vision" class="fade-in slide-in">
+        <h2>Our Vision</h2>
+        <p>AFIL shall sustain among the loss adjuster firms in Malaysia while keeping the environment safe to all our stakeholders and minimize the wastage in any form while carrying our duty.</p>
+    </section>
+
+    <section id="mission" class="fade-in slide-in">
+        <h2>Our Mission</h2>
+        <p>We obliged to serve promptly, equitably, efficiently and always with integrity and honesty</p>
+    </section>
+
+    <section id="team" class="fade-in slide-in">
+        <h2>Meet the Team</h2>
+        <div class="team-member">
+            <img src="image/mama.jpg" alt="Dr. Rodziah Hj Ahmad">
+            <h3>DR. RODZIAH HJ AHMAD</h3>
+            <p class="title">Managing Director / NDTS Trainer</p>
+            <p>28 years of industrial experience and more than two decade in this company had exposed her to various types of insurance claims investigation in motor and non-motor lines. Her expertise in Liability Claims and knowledge management had contributed to the evolution of risk management syllabus in one of the local university. As the second-generation managing the company, she believes in team’s intergrity that makes a sustainability business and organization.</p>
+        </div>
+        <div class="team-member">
+            <img src="image/acu.jpg" alt="HJ Zulfadzli Hj Ahmad">
+            <h3>HJ ZULFADZLI HJ AHMAD</h3>
+            <p class="title">Director / NDTS Trainer</p>
+            <p>Our newly appointed director has 24 years of motor and fraud investigation experience and a qualified coach for Vehicle Damage Assessment. His past experience as Expert Panel Member of for National Occupational Skills Standard under Malaysia Human Resources Ministry,  Pesuruhjaya Ibu Pejabat Persekutuan Pengakap Malaysia (Special Task Unit) and active involvement as Council Member of the Malaysian Amateur Radio Transmitter's Society will strengthen the team in media ICT. As one of the key players in the media work of the Pertubuhan Kebudayaan Indonesia China Malaysia based in Yogyakarta, Indonesia, we expect to expand our services internationally in the near future.</p>
+        </div>
+        <!-- Add more team members as needed -->
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Afil Adjusters & Investigators</div>
+            <div class="quick-links">
+                <a href="https://www.facebook.com/afiladjuster/" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.slide-in');
+            
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    sections.forEach(section => {
+                        section.classList.remove('slide-in-visible');
+                    });
+
+                    setTimeout(() => {
+                        targetSection.classList.add('slide-in-visible');
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 10);
+                });
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

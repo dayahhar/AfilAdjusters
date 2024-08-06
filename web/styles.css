@@ -6,6 +6,7 @@ body {
     color: #333;
     background-color: #fff;
     scroll-behavior: smooth;
+    font-size: 20px;
 }
 
 header {
@@ -389,3 +390,11 @@ footer .social-media a:hover, footer .quick-links a:hover {
 .fade-in-visible {
     opacity: 1; /* Visible state */
 }
+
+.slide-in {
+            transform: translateX(100%);
+            transition: transform 1s ease-in-out;
+        }
+        .slide-in-visible {
+            transform: translateX(0);
+        }

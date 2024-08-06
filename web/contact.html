@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Afil Adjusters & Investigators</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/afil.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="industries.html">Industries Served</a></li>
+                <li><a href="newsletter.html">Newsletters</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact" class="fade-in">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="contact-info">
+            <h3>Our Office</h3>
+            <div class="office-info">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3983.589242593491!2d101.7286315!3d3.20206!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc383d11d5448b%3A0x923954b7940d3399!2sAfil%20Adjusters%20%26%20Investigators%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1722486824367!5m2!1sen!2smy" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+                <div class="address-info">
+                    <h4>Afil Adjusters & Investigators Sdn. Bhd.</h4>
+                    <p>198501003394 (135836-H)</p>
+                    <p>34-1, Jalan 2a/27a, Seksyen 1 Wangsa Maju,</p>
+                    <p>53300 Kuala Lumpur, Malaysia</p>
+                    <p>Phone: +60341439140 | +6041313424</p>
+                    <p>Email: afil_mail@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Afil Adjusters & Investigators</div>
+            <div class="quick-links">
+                <a href="https://www.facebook.com/afiladjuster/" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.slide-in');
+            
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    sections.forEach(section => {
+                        section.classList.remove('slide-in-visible');
+                    });
+
+                    setTimeout(() => {
+                        targetSection.classList.add('slide-in-visible');
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 10);
+                });
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
