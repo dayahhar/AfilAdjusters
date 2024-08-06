@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Home Section - Admin Panel</title>
-    <link rel="stylesheet" href="adminStyle.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="image/afil.png" alt="Afil Adjusters & Investigators">
+            <img src="image/afil.png" alt="Afil Adjusters & Investigators Logo">
         </div>
         <nav>
             <ul>
@@ -19,55 +19,43 @@
         </nav>
     </header>
 
-    <main>
-        <section class="edit-section">
-            <h2>Edit Home Section</h2>
-            <form id="edit-home-form">
-                <label for="home-title">Headline:</label>
-                <input type="text" id="home-title" name="home-title" value="Welcome to Afil Adjusters & Investigators">
+    <section class="edit-section fade-in">
+        <h2>Edit Home Section</h2>
+        <form id="edit-home-form">
+            <label for="hero-title">Hero Title:</label>
+            <input type="text" id="hero-title" name="hero-title" value="Welcome to Afil Adjusters & Investigators">
 
-                <label for="home-paragraph">Overview:</label>
-                <textarea id="home-paragraph" name="home-paragraph">Overview of services and what we offer to our clients.</textarea>
+            <label for="hero-description">Hero Description:</label>
+            <textarea id="hero-description" name="hero-description" rows="4">Overview of services and what we offer to our clients.</textarea>
 
-                <label for="cta-button-text">Button Text:</label>
-                <input type="text" id="cta-button-text" name="cta-button-text" value="Our Services">
+            <label for="cta-text">Call to Action Text:</label>
+            <input type="text" id="cta-text" name="cta-text" value="Our Services">
 
-                <button type="submit">Save Changes</button>
-            </form>
-        </section>
-    </main>
+            <button type="submit">Save Changes</button>
+        </form>
+    </section>
 
     <footer>
         <div class="footer-content">
             <div class="logo">Afil Adjusters & Investigators Sdn. Bhd.</div>
             <div class="quick-links">
-                <a href="https://www.facebook.com/afiladjuster/">Facebook</a>
+                <a href="https://www.facebook.com/afiladjuster/" target="_blank">Facebook</a>
             </div>
         </div>
     </footer>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('edit-home-form');
-
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                // Collect form data
-                const title = document.getElementById('home-title').value;
-                const paragraph = document.getElementById('home-paragraph').value;
-                const buttonText = document.getElementById('cta-button-text').value;
-
-                // Log data (replace this with actual save logic)
-                console.log('Headline:', title);
-                console.log('Overview:', paragraph);
-                console.log('Button Text:', buttonText);
-
-                // Here you would typically send the data to your server
-                // For example: fetch('/save-home-section', { method: 'POST', body: JSON.stringify({ title, paragraph, buttonText }), headers: { 'Content-Type': 'application/json' } });
-
-                alert('Changes saved successfully!');
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
             });
+            elements.forEach(element => observer.observe(element));
         });
     </script>
 </body>

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Home Section - Admin Panel</title>
-    <link rel="stylesheet" href="adminStyle.css">
+    <title>Edit About Section - Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="image/afil.png" alt="Afil Adjusters & Investigators">
+            <img src="image/afil.png" alt="Afil Adjusters & Investigators Logo">
         </div>
         <nav>
             <ul>
@@ -19,57 +19,43 @@
         </nav>
     </header>
 
-    <main>
-        <section class="edit-section">
-            <h2>Edit About Us Section</h2>
-            <form id="edit-about-form">
-                <div class="form-group">
-                    <label for="company-history">Company History</label>
-                    <textarea id="company-history" name="company-history" rows="5" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="vision">Vision</label>
-                    <textarea id="vision" name="vision" rows="5" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="mission">Mission</label>
-                    <textarea id="mission" name="mission" rows="5" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="team">Team</label>
-                    <textarea id="team" name="team" rows="10" required></textarea>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Save Changes</button>
-                </div>
-            </form>
-        </section>
-    </main>
+    <section class="edit-section fade-in">
+        <h2>Edit About Section</h2>
+        <form id="edit-about-form">
+            <label for="company-history">Company History:</label>
+            <textarea id="company-history" name="company-history" rows="4">Founded in 1985, with office humbly started at Jalan Ipoh...</textarea>
+
+            <label for="vision">Our Vision:</label>
+            <textarea id="vision" name="vision" rows="4">Afil shall sustain among the loss adjuster firms in Malaysia...</textarea>
+
+            <label for="mission">Our Mission:</label>
+            <textarea id="mission" name="mission" rows="4">We are committed to serving promptly, equitably, efficiently...</textarea>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </section>
 
     <footer>
         <div class="footer-content">
             <div class="logo">Afil Adjusters & Investigators Sdn. Bhd.</div>
             <div class="quick-links">
-                <a href="https://www.facebook.com/afiladjuster/">Facebook</a>
+                <a href="https://www.facebook.com/afiladjuster/" target="_blank">Facebook</a>
             </div>
         </div>
     </footer>
-    
+
     <script>
-        document.getElementById('edit-about-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-
-            const aboutData = {
-                companyHistory: formData.get('company-history'),
-                vision: formData.get('vision'),
-                mission: formData.get('mission'),
-                team: formData.get('team')
-            };
-
-            console.log('About Section Data:', aboutData);
-
-            // Add your AJAX code here to send the data to your server and save it
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            elements.forEach(element => observer.observe(element));
         });
     </script>
 </body>

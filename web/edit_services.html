@@ -1,17 +1,66 @@
-
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Services Section - Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/afil.png" alt="Afil Adjusters & Investigators Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="admin.html">Home</a></li>
+                <li><a href="logout.html">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="edit-section fade-in">
+        <h2>Edit Services Section</h2>
+        <form id="edit-services-form">
+            <label for="service-title">Service Title:</label>
+            <input type="text" id="service-title" name="service-title" value="Service Title">
+
+            <label for="service-description">Service Description:</label>
+            <textarea id="service-description" name="service-description" rows="4">Description of service.</textarea>
+
+            <button type="button" id="add-service-btn">Add Service</button>
+            <button type="button" id="edit-service-btn">Edit Service</button>
+            <button type="button" id="delete-service-btn">Delete Service</button>
+        </form>
+        <div id="services-list">
+            <!-- List of services will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Afil Adjusters & Investigators Sdn. Bhd.</div>
+            <div class="quick-links">
+                <a href="https://www.facebook.com/afiladjuster/" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            elements.forEach(element => observer.observe(element));
+
+            // Add logic to handle add/edit/delete services
+        });
+    </script>
+</body>
 </html>

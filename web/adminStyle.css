@@ -135,7 +135,7 @@ label {
     margin: 10px 0 5px;
 }
 
-input[type="text"], textarea {
+input[type="text"], input[type="email"], textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -158,4 +158,18 @@ button {
 
 button:hover {
     background-color: #b27723;
+}
+
+.service-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.service-item:hover {
+    background-color: #f1f1f1;
 }
